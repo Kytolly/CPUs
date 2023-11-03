@@ -1,0 +1,67 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55d809f13cf0 .scope module, "D_FF" "D_FF" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "D";
+    .port_info 1 /INPUT 1 "Clk";
+    .port_info 2 /OUTPUT 1 "Q";
+    .port_info 3 /OUTPUT 1 "Qn";
+o0x7f7d936b8258 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x55d809f60d20 .functor NOT 1, o0x7f7d936b8258, C4<0>, C4<0>, C4<0>;
+v0x55d809f60710_0 .net "Clk", 0 0, o0x7f7d936b8258;  0 drivers
+v0x55d809f607d0_0 .net "Clkn", 0 0, L_0x55d809f60d20;  1 drivers
+o0x7f7d936b8018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55d809f608a0_0 .net "D", 0 0, o0x7f7d936b8018;  0 drivers
+v0x55d809f609a0_0 .net "Q", 0 0, L_0x55d809f613c0;  1 drivers
+v0x55d809f60a70_0 .net "Q0", 0 0, L_0x55d809f60ff0;  1 drivers
+v0x55d809f60bb0_0 .net "Qn", 0 0, L_0x55d809f61550;  1 drivers
+v0x55d809f60c50_0 .net "Qn0", 0 0, L_0x55d809f61130;  1 drivers
+S_0x55d809f13ef0 .scope module, "d0" "D_Latch" 2 10, 3 1 0, S_0x55d809f13cf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "D";
+    .port_info 1 /INPUT 1 "En";
+    .port_info 2 /OUTPUT 1 "Q";
+    .port_info 3 /OUTPUT 1 "Qn";
+L_0x55d809f60e30 .functor NOT 1, o0x7f7d936b8018, C4<0>, C4<0>, C4<0>;
+L_0x55d809f60ef0 .functor NAND 1, o0x7f7d936b8018, L_0x55d809f60d20, C4<1>, C4<1>;
+L_0x55d809f60f80 .functor NAND 1, L_0x55d809f60d20, L_0x55d809f60e30, C4<1>, C4<1>;
+L_0x55d809f60ff0 .functor NAND 1, L_0x55d809f60ef0, L_0x55d809f61130, C4<1>, C4<1>;
+L_0x55d809f61130 .functor NAND 1, L_0x55d809f60ff0, L_0x55d809f60f80, C4<1>, C4<1>;
+v0x55d809f14e50_0 .net "D", 0 0, o0x7f7d936b8018;  alias, 0 drivers
+v0x55d809f5f930_0 .net "Dn", 0 0, L_0x55d809f60e30;  1 drivers
+v0x55d809f5f9f0_0 .net "En", 0 0, L_0x55d809f60d20;  alias, 1 drivers
+v0x55d809f5fac0_0 .net "Q", 0 0, L_0x55d809f60ff0;  alias, 1 drivers
+v0x55d809f5fb80_0 .net "Qn", 0 0, L_0x55d809f61130;  alias, 1 drivers
+v0x55d809f5fc90_0 .net "Rn", 0 0, L_0x55d809f60f80;  1 drivers
+v0x55d809f5fd50_0 .net "Sn", 0 0, L_0x55d809f60ef0;  1 drivers
+S_0x55d809f5fe90 .scope module, "d1" "D_Latch" 2 11, 3 1 0, S_0x55d809f13cf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "D";
+    .port_info 1 /INPUT 1 "En";
+    .port_info 2 /OUTPUT 1 "Q";
+    .port_info 3 /OUTPUT 1 "Qn";
+L_0x55d809f611a0 .functor NOT 1, L_0x55d809f60ff0, C4<0>, C4<0>, C4<0>;
+L_0x55d809f61230 .functor NAND 1, L_0x55d809f60ff0, o0x7f7d936b8258, C4<1>, C4<1>;
+L_0x55d809f612c0 .functor NAND 1, o0x7f7d936b8258, L_0x55d809f611a0, C4<1>, C4<1>;
+L_0x55d809f613c0 .functor NAND 1, L_0x55d809f61230, L_0x55d809f61550, C4<1>, C4<1>;
+L_0x55d809f61550 .functor NAND 1, L_0x55d809f613c0, L_0x55d809f612c0, C4<1>, C4<1>;
+v0x55d809f60100_0 .net "D", 0 0, L_0x55d809f60ff0;  alias, 1 drivers
+v0x55d809f601d0_0 .net "Dn", 0 0, L_0x55d809f611a0;  1 drivers
+v0x55d809f60270_0 .net "En", 0 0, o0x7f7d936b8258;  alias, 0 drivers
+v0x55d809f60340_0 .net "Q", 0 0, L_0x55d809f613c0;  alias, 1 drivers
+v0x55d809f60400_0 .net "Qn", 0 0, L_0x55d809f61550;  alias, 1 drivers
+v0x55d809f60510_0 .net "Rn", 0 0, L_0x55d809f612c0;  1 drivers
+v0x55d809f605d0_0 .net "Sn", 0 0, L_0x55d809f61230;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "D_FF.v";
+    "./D_Latch.v";

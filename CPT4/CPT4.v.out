@@ -1,0 +1,49 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55d6390fedf0 .scope module, "CPT4" "CPT4" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /INPUT 4 "B";
+    .port_info 2 /OUTPUT 1 "Y";
+L_0x55d639149e00 .functor XOR 1, L_0x55d639149ed0, L_0x55d639149f70, C4<0>, C4<0>;
+L_0x55d63914a060 .functor XOR 1, L_0x55d63914a160, L_0x55d63914a2a0, C4<0>, C4<0>;
+L_0x55d63914a410 .functor XOR 1, L_0x55d63914a480, L_0x55d63914a570, C4<0>, C4<0>;
+L_0x55d63914a6a0 .functor XOR 1, L_0x55d63914a740, L_0x55d63914a8c0, C4<0>, C4<0>;
+L_0x55d63914aa40 .functor NOR 1, L_0x55d639149e00, L_0x55d63914a060, L_0x55d63914a410, L_0x55d63914a6a0;
+o0x7efdb0842018 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x55d6390fefd0_0 .net "A", 3 0, o0x7efdb0842018;  0 drivers
+o0x7efdb0842048 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x55d6391491b0_0 .net "B", 3 0, o0x7efdb0842048;  0 drivers
+v0x55d639149290_0 .net "Y", 0 0, L_0x55d63914aa40;  1 drivers
+v0x55d639149330_0 .net "Y0", 0 0, L_0x55d639149e00;  1 drivers
+v0x55d6391493f0_0 .net "Y1", 0 0, L_0x55d63914a060;  1 drivers
+v0x55d639149500_0 .net "Y2", 0 0, L_0x55d63914a410;  1 drivers
+v0x55d6391495c0_0 .net "Y3", 0 0, L_0x55d63914a6a0;  1 drivers
+v0x55d639149680_0 .net *"_ivl_1", 0 0, L_0x55d639149ed0;  1 drivers
+v0x55d639149760_0 .net *"_ivl_11", 0 0, L_0x55d63914a570;  1 drivers
+v0x55d639149840_0 .net *"_ivl_13", 0 0, L_0x55d63914a740;  1 drivers
+v0x55d639149920_0 .net *"_ivl_15", 0 0, L_0x55d63914a8c0;  1 drivers
+v0x55d639149a00_0 .net *"_ivl_3", 0 0, L_0x55d639149f70;  1 drivers
+v0x55d639149ae0_0 .net *"_ivl_5", 0 0, L_0x55d63914a160;  1 drivers
+v0x55d639149bc0_0 .net *"_ivl_7", 0 0, L_0x55d63914a2a0;  1 drivers
+v0x55d639149ca0_0 .net *"_ivl_9", 0 0, L_0x55d63914a480;  1 drivers
+L_0x55d639149ed0 .part o0x7efdb0842018, 0, 1;
+L_0x55d639149f70 .part o0x7efdb0842048, 0, 1;
+L_0x55d63914a160 .part o0x7efdb0842018, 1, 1;
+L_0x55d63914a2a0 .part o0x7efdb0842048, 1, 1;
+L_0x55d63914a480 .part o0x7efdb0842018, 2, 1;
+L_0x55d63914a570 .part o0x7efdb0842048, 2, 1;
+L_0x55d63914a740 .part o0x7efdb0842018, 3, 1;
+L_0x55d63914a8c0 .part o0x7efdb0842048, 3, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "CPT4.v";

@@ -1,0 +1,34 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55d62be1c420 .scope module, "D_Latch" "D_Latch" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "D";
+    .port_info 1 /INPUT 1 "En";
+    .port_info 2 /OUTPUT 1 "Q";
+    .port_info 3 /OUTPUT 1 "Qn";
+o0x7f312dd9f018 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x55d62be3ece0 .functor NOT 1, o0x7f312dd9f018, C4<0>, C4<0>, C4<0>;
+o0x7f312dd9f078 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x55d62be3eda0 .functor NAND 1, o0x7f312dd9f018, o0x7f312dd9f078, C4<1>, C4<1>;
+L_0x55d62be3ee90 .functor NAND 1, o0x7f312dd9f078, L_0x55d62be3ece0, C4<1>, C4<1>;
+L_0x55d62be3efd0 .functor NAND 1, L_0x55d62be3eda0, L_0x55d62be3f0c0, C4<1>, C4<1>;
+L_0x55d62be3f0c0 .functor NAND 1, L_0x55d62be3efd0, L_0x55d62be3ee90, C4<1>, C4<1>;
+v0x55d62be1c620_0 .net "D", 0 0, o0x7f312dd9f018;  0 drivers
+v0x55d62be3e780_0 .net "Dn", 0 0, L_0x55d62be3ece0;  1 drivers
+v0x55d62be3e840_0 .net "En", 0 0, o0x7f312dd9f078;  0 drivers
+v0x55d62be3e910_0 .net "Q", 0 0, L_0x55d62be3efd0;  1 drivers
+v0x55d62be3e9d0_0 .net "Qn", 0 0, L_0x55d62be3f0c0;  1 drivers
+v0x55d62be3eae0_0 .net "Rn", 0 0, L_0x55d62be3ee90;  1 drivers
+v0x55d62be3eba0_0 .net "Sn", 0 0, L_0x55d62be3eda0;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "D_Latch.v";

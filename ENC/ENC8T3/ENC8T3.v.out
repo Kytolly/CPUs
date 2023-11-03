@@ -1,0 +1,99 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55ad2462fdf0 .scope module, "ENC8T3" "ENC8T3" 2 4;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "I";
+    .port_info 1 /OUTPUT 3 "Y";
+    .port_info 2 /OUTPUT 1 "Idle";
+L_0x55ad24685620 .functor NOT 1, L_0x55ad246856c0, C4<0>, C4<0>, C4<0>;
+L_0x55ad24685760 .functor NOT 1, L_0x55ad24685830, C4<0>, C4<0>, C4<0>;
+L_0x55ad24685970 .functor NOT 1, L_0x55ad246859e0, C4<0>, C4<0>, C4<0>;
+L_0x55ad24685ad0 .functor NOT 1, L_0x55ad24685ba0, C4<0>, C4<0>, C4<0>;
+L_0x55ad24685cc0 .functor NOT 1, L_0x55ad24685d60, C4<0>, C4<0>, C4<0>;
+L_0x55ad24685e00 .functor NOT 1, L_0x55ad24685ee0, C4<0>, C4<0>, C4<0>;
+L_0x55ad24686010 .functor NOT 1, L_0x55ad24686080, C4<0>, C4<0>, C4<0>;
+L_0x55ad24686170 .functor NOT 1, L_0x55ad24686230, C4<0>, C4<0>, C4<0>;
+L_0x55ad24686370 .functor OR 1, L_0x55ad246864d0, L_0x55ad246865c0, L_0x55ad24686710, L_0x55ad246867b0;
+L_0x55ad24686910 .functor AND 1, L_0x55ad24686a80, L_0x55ad24685cc0, L_0x55ad24685e00, C4<1>;
+L_0x55ad24686b20 .functor AND 1, L_0x55ad24686b90, L_0x55ad24685cc0, L_0x55ad24685e00, C4<1>;
+L_0x55ad246868a0 .functor OR 1, L_0x55ad24686910, L_0x55ad24686b20, L_0x55ad24686e10, L_0x55ad24686f00;
+L_0x55ad24687290 .functor AND 1, L_0x55ad24687380, L_0x55ad24685970, L_0x55ad24685cc0, L_0x55ad24686010;
+L_0x55ad24687470 .functor AND 1, L_0x55ad24687560, L_0x55ad24685cc0, L_0x55ad24686010, C4<1>;
+L_0x55ad24686da0 .functor AND 1, L_0x55ad24687720, L_0x55ad24686010, C4<1>, C4<1>;
+L_0x55ad24687a10 .functor OR 1, L_0x55ad24687290, L_0x55ad24687470, L_0x55ad24686da0, L_0x55ad24687650;
+L_0x55ad24687ca0/0/0 .functor AND 1, L_0x55ad24685620, L_0x55ad24685760, L_0x55ad24685970, L_0x55ad24685ad0;
+L_0x55ad24687ca0/0/4 .functor AND 1, L_0x55ad24685cc0, L_0x55ad24685e00, L_0x55ad24686010, L_0x55ad24686170;
+L_0x55ad24687ca0 .functor AND 1, L_0x55ad24687ca0/0/0, L_0x55ad24687ca0/0/4, C4<1>, C4<1>;
+o0x7f74a86e8018 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x55ad2462ffd0_0 .net "I", 7 0, o0x7f74a86e8018;  0 drivers
+v0x55ad246832d0_0 .net "Idle", 0 0, L_0x55ad24687ca0;  1 drivers
+v0x55ad24683390_0 .net "In0", 0 0, L_0x55ad24685620;  1 drivers
+v0x55ad24683430_0 .net "In1", 0 0, L_0x55ad24685760;  1 drivers
+v0x55ad246834f0_0 .net "In2", 0 0, L_0x55ad24685970;  1 drivers
+v0x55ad24683600_0 .net "In3", 0 0, L_0x55ad24685ad0;  1 drivers
+v0x55ad246836c0_0 .net "In4", 0 0, L_0x55ad24685cc0;  1 drivers
+v0x55ad24683780_0 .net "In5", 0 0, L_0x55ad24685e00;  1 drivers
+v0x55ad24683840_0 .net "In6", 0 0, L_0x55ad24686010;  1 drivers
+v0x55ad24683900_0 .net "In7", 0 0, L_0x55ad24686170;  1 drivers
+v0x55ad246839c0_0 .net "S1", 0 0, L_0x55ad24686910;  1 drivers
+v0x55ad24683a80_0 .net "S2", 0 0, L_0x55ad24686b20;  1 drivers
+v0x55ad24683b40_0 .net "S4", 0 0, L_0x55ad24687290;  1 drivers
+v0x55ad24683c00_0 .net "S5", 0 0, L_0x55ad24687470;  1 drivers
+v0x55ad24683cc0_0 .net "S6", 0 0, L_0x55ad24686da0;  1 drivers
+v0x55ad24683d80_0 .net "Y", 2 0, L_0x55ad246877c0;  1 drivers
+v0x55ad24683e60_0 .net *"_ivl_1", 0 0, L_0x55ad246856c0;  1 drivers
+v0x55ad24684050_0 .net *"_ivl_11", 0 0, L_0x55ad24685ee0;  1 drivers
+v0x55ad24684130_0 .net *"_ivl_13", 0 0, L_0x55ad24686080;  1 drivers
+v0x55ad24684210_0 .net *"_ivl_15", 0 0, L_0x55ad24686230;  1 drivers
+v0x55ad246842f0_0 .net *"_ivl_16", 0 0, L_0x55ad24686370;  1 drivers
+v0x55ad246843d0_0 .net *"_ivl_19", 0 0, L_0x55ad246864d0;  1 drivers
+v0x55ad246844b0_0 .net *"_ivl_21", 0 0, L_0x55ad246865c0;  1 drivers
+v0x55ad24684590_0 .net *"_ivl_23", 0 0, L_0x55ad24686710;  1 drivers
+v0x55ad24684670_0 .net *"_ivl_25", 0 0, L_0x55ad246867b0;  1 drivers
+v0x55ad24684750_0 .net *"_ivl_27", 0 0, L_0x55ad24686a80;  1 drivers
+v0x55ad24684830_0 .net *"_ivl_29", 0 0, L_0x55ad24686b90;  1 drivers
+v0x55ad24684910_0 .net *"_ivl_3", 0 0, L_0x55ad24685830;  1 drivers
+v0x55ad246849f0_0 .net *"_ivl_30", 0 0, L_0x55ad246868a0;  1 drivers
+v0x55ad24684ad0_0 .net *"_ivl_33", 0 0, L_0x55ad24686e10;  1 drivers
+v0x55ad24684bb0_0 .net *"_ivl_35", 0 0, L_0x55ad24686f00;  1 drivers
+v0x55ad24684c90_0 .net *"_ivl_37", 0 0, L_0x55ad24687380;  1 drivers
+v0x55ad24684d70_0 .net *"_ivl_39", 0 0, L_0x55ad24687560;  1 drivers
+v0x55ad24685060_0 .net *"_ivl_41", 0 0, L_0x55ad24687720;  1 drivers
+v0x55ad24685140_0 .net *"_ivl_42", 0 0, L_0x55ad24687a10;  1 drivers
+v0x55ad24685220_0 .net *"_ivl_46", 0 0, L_0x55ad24687650;  1 drivers
+v0x55ad24685300_0 .net *"_ivl_5", 0 0, L_0x55ad246859e0;  1 drivers
+v0x55ad246853e0_0 .net *"_ivl_7", 0 0, L_0x55ad24685ba0;  1 drivers
+v0x55ad246854c0_0 .net *"_ivl_9", 0 0, L_0x55ad24685d60;  1 drivers
+L_0x55ad246856c0 .part o0x7f74a86e8018, 0, 1;
+L_0x55ad24685830 .part o0x7f74a86e8018, 1, 1;
+L_0x55ad246859e0 .part o0x7f74a86e8018, 2, 1;
+L_0x55ad24685ba0 .part o0x7f74a86e8018, 3, 1;
+L_0x55ad24685d60 .part o0x7f74a86e8018, 4, 1;
+L_0x55ad24685ee0 .part o0x7f74a86e8018, 5, 1;
+L_0x55ad24686080 .part o0x7f74a86e8018, 6, 1;
+L_0x55ad24686230 .part o0x7f74a86e8018, 7, 1;
+L_0x55ad246864d0 .part o0x7f74a86e8018, 4, 1;
+L_0x55ad246865c0 .part o0x7f74a86e8018, 5, 1;
+L_0x55ad24686710 .part o0x7f74a86e8018, 6, 1;
+L_0x55ad246867b0 .part o0x7f74a86e8018, 7, 1;
+L_0x55ad24686a80 .part o0x7f74a86e8018, 2, 1;
+L_0x55ad24686b90 .part o0x7f74a86e8018, 3, 1;
+L_0x55ad24686e10 .part o0x7f74a86e8018, 6, 1;
+L_0x55ad24686f00 .part o0x7f74a86e8018, 7, 1;
+L_0x55ad24687380 .part o0x7f74a86e8018, 1, 1;
+L_0x55ad24687560 .part o0x7f74a86e8018, 3, 1;
+L_0x55ad24687720 .part o0x7f74a86e8018, 5, 1;
+L_0x55ad246877c0 .concat8 [ 1 1 1 0], L_0x55ad24687a10, L_0x55ad246868a0, L_0x55ad24686370;
+L_0x55ad24687650 .part o0x7f74a86e8018, 7, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "ENC8T3.v";

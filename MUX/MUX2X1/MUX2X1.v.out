@@ -1,0 +1,34 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x564fad4d5310 .scope module, "MUX2X1" "MUX2X1" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /INPUT 1 "S";
+    .port_info 3 /OUTPUT 1 "Y";
+o0x7f83042b70d8 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x564fad4f7890 .functor NOT 1, o0x7f83042b70d8, C4<0>, C4<0>, C4<0>;
+o0x7f83042b7018 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x564fad4f7950 .functor NAND 1, o0x7f83042b7018, L_0x564fad4f7890, C4<1>, C4<1>;
+o0x7f83042b7078 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x564fad4f7a70 .functor NAND 1, o0x7f83042b7078, o0x7f83042b70d8, C4<1>, C4<1>;
+L_0x564fad4f7b60 .functor NAND 1, L_0x564fad4f7950, L_0x564fad4f7a70, C4<1>, C4<1>;
+v0x564fad4d5510_0 .net "A", 0 0, o0x7f83042b7018;  0 drivers
+v0x564fad4f7330_0 .net "AS", 0 0, L_0x564fad4f7950;  1 drivers
+v0x564fad4f73f0_0 .net "B", 0 0, o0x7f83042b7078;  0 drivers
+v0x564fad4f74c0_0 .net "BS", 0 0, L_0x564fad4f7a70;  1 drivers
+v0x564fad4f7580_0 .net "S", 0 0, o0x7f83042b70d8;  0 drivers
+v0x564fad4f7690_0 .net "S_n", 0 0, L_0x564fad4f7890;  1 drivers
+v0x564fad4f7750_0 .net "Y", 0 0, L_0x564fad4f7b60;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "MUX2X1.v";

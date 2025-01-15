@@ -1,4 +1,4 @@
-# CPUs(UESTC-计算机组成与原理)
+# CPUs(UESTC-计算机组成与结构)
 This repository contains my lab assignments for Computer Organization and Architecture course at UESTC. The labs focus on designing and implementing various fundamental components of a CPU and a complete CPU system.
 ## CPU Implementations
 
